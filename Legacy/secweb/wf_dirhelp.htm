@@ -1,0 +1,216 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="../pg_style.css">
+<title>Workflow Help</title>
+</head>
+
+<body bgcolor="#ffffff">
+
+<p><font face="Verdana" size="5">ERMS Workflow Help</font></p>
+
+<a name="Intro"></a><hr noshade color="#808000">
+
+<p><strong><font face="Verdana" size="3">Introduction - The Workflow Process In a Nutshell</font></strong></p>
+
+<p><font face="Verdana" size="2">Workflow in the ERMS system allows users to quickly
+define, assign and create tasks to handle common processes. The workflow tools provided by
+the system allow for the creation of workflow templates which are utilized in the creation
+of tasks.</font></p>
+
+<p><font face="Verdana" size="2">In order to provide a usable workflow system, certain
+steps should be taken to ensure that data is available for the creation of specific
+workflow items. The workflow process can be broken down as follows:</font></p>
+
+<p><font face="Verdana" size="2"><strong><u>1. Workflow Group Creation and the Addition of
+Members</u></strong></font></p>
+
+<blockquote>
+  <p><font face="Verdana" size="2">This should be your first step in creating a usable
+  workflow system.&nbsp;<strong>Workflow Groups</strong>&nbsp;and their members form the
+  basis for all task assignment within the workflow system. Some groups created could have
+  many members, but every group&nbsp;must contain at least one member to ensure proper
+  processing.</font></p>
+  <p><font face="Verdana" size="2"><strong>Workflow Groups</strong> and members are
+  discussed in more detail in: <a href="wf_dirhelp.htm#AboutGroups"><strong>About Workflow Groups</strong></a>
+  and <a href="wf_dirhelp.htm#CreateGroups"><strong>Creating Workflow Groups and Adding Members</strong></a>.</font></p>
+</blockquote>
+
+<p><font face="Verdana" size="2"><strong><u>2. Action Template Creation</u></strong></font></p>
+
+<blockquote>
+  <p><font face="Verdana" size="2">Action templates or <strong>Actions</strong> as they will
+  be referred to throughout the rest of information contained here provide the ability to
+  contain specific tasks which can then be used by any number of <strong>Workflow Templates</strong>.
+  Specific actions may even be revisited multiple times within the process steps of a
+  workflow template. Such a case might occur in the case of a review that would be conducted
+  before other process steps occurred, and again at the time all other process steps have
+  been completed. Actions should be thought of as generalizations that are further defined
+  when they are added to workflow templates.</font></p>
+  <p><font face="Verdana" size="2"><strong>Workflow Actions</strong> are discussed in more
+  detail in: <a href="wf_dirhelp.htm#AboutActions"><strong>About Workflow Actions</strong></a>, <strong><a
+  href="wf_dirhelp.htm#CreateActions">Creating Actions</a></strong> and <strong><a href="wf_dirhelp.htm#CreateTemp">Creating
+  Templates and Adding Action Items</a></strong>.</font></p>
+</blockquote>
+
+<p><font face="Verdana" size="2"><strong><u>3. Workflow Template Creation</u></strong></font></p>
+
+<blockquote>
+  <p><font face="Verdana" size="2"><strong>Workflow Templates</strong> provide a container
+  to pull all the pieces together into a coherent whole. Templates contain basic header
+  information that identifies a template and it's intended use, and <strong>Template Items</strong>
+  that contain action information but provide for a greater level of detail. These items,
+  when added to a template, are no longer the generalized <strong>Actions</strong> they were
+  based upon, but are their own containerized task definitions.</font></p>
+  <p><font face="Verdana" size="2"><strong>Workflow Templates</strong> and <strong>Template
+  Items</strong> are discussed in greater detail in: <strong><a href="wf_dirhelp.htm#AboutTemp">About
+  Workflow Templates and Items</a></strong>, <strong><a href="wf_dirhelp.htm#CreateTemp">Creating
+  Templates and Adding Action Items</a></strong> and <strong><a href="wf_dirhelp.htm#AboutTaskGen">About
+  Task Generation</a></strong>.</font></p>
+</blockquote>
+
+<p><font face="Verdana" size="2"><strong><u>4. Workflow Task Generation</u></strong></font></p>
+
+<blockquote>
+  <p><font face="Verdana" size="2"><strong>Workflow Tasks</strong> are generated based on
+  information contained within a <strong>Workflow Template</strong>. These tasks exist
+  within the ERMS Task system in order to allow the same reporting capabilities as standard
+  tasks, but they&nbsp;contain additional information required for the completion of tasks
+  within the confines of&nbsp;the step by step process defined by the <strong>Workflow
+  Template</strong>. This allows these tasks to be activated at the proper time&nbsp;by the
+  completion of previous steps in the process, or they may be reactivated (regenerated)
+  or&nbsp;permanently deactivated if a rejection occurs or an approval is not satisfied.</font></p>
+  <p><font face="Verdana" size="2">A group of <strong>Workflow Tasks</strong> is
+  generated&nbsp;from the designation of a base reference available within the ERMS system.
+  When a document record is created within the ERMS system, <strong>Workflow Tasks</strong>
+  can be generated to accomplish the production and release of the document. When a change
+  is requested <strong>Workflow Tasks</strong> can be generated to accomplish the updates
+  and fulfillment of the change.</font></p>
+  <p><font face="Verdana" size="2">Task generation is kicked off from the view of a specific
+  item within the ERMS<em>Web</em> system. This point of entry provides the base reference
+  and allows a specific <strong>Workflow Template</strong> to be selected. Once selected the
+  process steps contained within the template are dispalyed to allow for the inclusion or
+  ommision of specific steps made available by the <strong>Template Items</strong> and a
+  group of tasks is then created including the base reference information
+  and&nbsp;provisions/directions of the process steps contained within the selected items.
+  When a group of Workflow Tasks is generated for a base reference, these tasks will be
+  displayed as a part of the viewable record for the base reference. This provides quick
+  reference to progress through the process steps.</font></p>
+  <p><font face="Verdana" size="2">Workflow Tasks and Task Generation are discussed in
+  greater detail in: <a href="wf_dirhelp.htm#AboutTaskGen"><strong>About Task Generation</strong></a>, <strong><a
+  href="wf_dirhelp.htm#TaskGen">Generating Workflow Tasks</a></strong>, <strong><a href="wf_dirhelp.htm#ModTasks">Adding
+  and Modifying Workflow Tasks</a></strong> and <strong><a href="wf_dirhelp.htm#UpdTasks">Workflow
+  Operations - Updating Workflow Tasks</a></strong>.</font></p>
+</blockquote>
+
+<p><font face="Verdana" size="2"><strong><u>5. Workflow Operations</u></strong></font></p>
+
+<blockquote>
+  <p><font face="Verdana" size="2"><strong>Workflow Operations</strong> refers to the work
+  of updating and completing <strong>Workflow Tasks</strong>, in other words, accomplishing
+  the tasks set forth by the workflow task records. From the users perspective this will be
+  as simple as going through their <strong>To Do List</strong> and providing minimal
+  information to the system. From this interface various operations will be
+  accomplished,&nbsp;including approving/denying requests, accepting/rejecting reviewed
+  materials, and providing time spent and/or cost information as well as completion of
+  process tasks.</font></p>
+  <p><font face="Verdana" size="2">Workflow Operations are discussed in greater detail in: <a
+  href="wf_dirhelp.htm#UpdTasks"><strong>Workflow Operations - Updating Workflow Tasks</strong></a>.</font></p>
+</blockquote>
+
+<p align="center"><font face="Verdana" size="2"><strong>( <a href="JavaScript:window.close(this);"
+onMouseOver="window.status = 'Close Window'; return true;">Close Window</a> )</strong></font></p>
+
+<a name="AboutGroups"></a><hr noshade color="#808000">
+
+<p><font face="Verdana" size="3"><strong>About Workflow Groups</strong></font></p>
+
+<p><font face="Verdana" size="2">Text.</font></p>
+
+<p align="center"><font face="Verdana" size="2"><strong>( <a href="JavaScript:window.close(this);"
+onMouseOver="window.status = 'Close Window'; return true;">Close Window</a> )</strong></font></p>
+
+<a name="CreateGroups"></a><hr noshade color="#808000">
+
+<p><font face="Verdana" size="3"><strong>Creating Workflow Groups and Adding Members</strong></font></p>
+
+<p><font face="Verdana" size="2">Text.</font></p>
+
+<p align="center"><font face="Verdana" size="2"><strong>( <a href="JavaScript:window.close(this);"
+onMouseOver="window.status = 'Close Window'; return true;">Close Window</a> )</strong></font></p>
+
+<a name="AboutActions"></a><hr noshade color="#808000">
+
+<p><font face="Verdana" size="3"><strong>About Workflow Actions</strong></font></p>
+
+<p><font face="Verdana" size="2">Text.</font></p>
+
+<p align="center"><font face="Verdana" size="2"><strong>( <a href="JavaScript:window.close(this);"
+onMouseOver="window.status = 'Close Window'; return true;">Close Window</a> )</strong></font></p>
+
+<a name="CreateActions"></a><hr noshade color="#808000">
+
+<p><font face="Verdana" size="3"><strong>Creating Actions</strong></font></p>
+
+<p><font face="Verdana" size="2">Text.</font></p>
+
+<p align="center"><font face="Verdana" size="2"><strong>( <a href="JavaScript:window.close(this);"
+onMouseOver="window.status = 'Close Window'; return true;">Close Window</a> )</strong></font></p>
+
+<a name="AboutTemp"></a><hr noshade color="#808000">
+
+<p><font face="Verdana" size="3"><strong>About Workflow Templates and Items</strong></font></p>
+
+<p><font face="Verdana" size="2">Text.</font></p>
+
+<p align="center"><font face="Verdana" size="2"><strong>( <a href="JavaScript:window.close(this);"
+onMouseOver="window.status = 'Close Window'; return true;">Close Window</a> )</strong></font></p>
+
+<a name=CreateTemp"></a><hr noshade color="#808000">
+
+<p><font face="Verdana" size="3"><strong>Creating Templates and Adding Action Items</strong></font></p>
+
+<p><font face="Verdana" size="2">Text.</font></p>
+
+<p align="center"><font face="Verdana" size="2"><strong>( <a href="JavaScript:window.close(this);"
+onMouseOver="window.status = 'Close Window'; return true;">Close Window</a> )</strong></font></p>
+
+<a name="AboutTaskGen"></a><hr noshade color="#808000">
+
+<p><font face="Verdana" size="3"><strong>About Task Generation</strong></font></p>
+
+<p><font face="Verdana" size="2">Text.</font></p>
+
+<p align="center"><font face="Verdana" size="2"><strong>( <a href="JavaScript:window.close(this);"
+onMouseOver="window.status = 'Close Window'; return true;">Close Window</a> )</strong></font></p>
+
+<a name="TaskGen"></a><hr noshade color="#808000">
+
+<p><font face="Verdana" size="3"><strong>Generating Workflow Tasks</strong></font></p>
+
+<p><font face="Verdana" size="2">Text.</font></p>
+
+<p align="center"><font face="Verdana" size="2"><strong>( <a href="JavaScript:window.close(this);"
+onMouseOver="window.status = 'Close Window'; return true;">Close Window</a> )</strong></font></p>
+
+<a name="ModTasks"></a><hr noshade color="#808000">
+
+<p><font face="Verdana" size="3"><strong>Adding and Modifying Workflow Tasks</strong></font></p>
+
+<p><font face="Verdana" size="2">Text.</font></p>
+
+<p align="center"><font face="Verdana" size="2"><strong>( <a href="JavaScript:window.close(this);"
+onMouseOver="window.status = 'Close Window'; return true;">Close Window</a> )</strong></font></p>
+
+<a name="UpdTasks"></a><hr noshade color="#808000">
+
+<p><font face="Verdana" size="3"><strong>Workflow Operations - Updating Workflow Tasks</strong></font></p>
+
+<p><font face="Verdana" size="2">Text.</font></p>
+
+<p align="center"><font face="Verdana" size="2"><strong>( <a href="JavaScript:window.close(this);"
+onMouseOver="window.status = 'Close Window'; return true;">Close Window</a> )</strong></font></p>
+
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,312 @@
+﻿
+.hrStyle
+{
+ color:#808000;	
+}
+
+
+.LSGrayXLargeText
+{ 	
+ color:#2E5FEF;
+ font:normal normal normal x-large Verdana;
+ text-align:left;  
+ vertical-align:middle;
+}
+
+.LSGraySmallText
+{ 
+ color:#2E5FEF;
+ font:normal normal normal small Verdana; 
+ margin:0 0 0 0; 
+}
+
+.LSWhiteSmallText {
+    color: #FFFFFF;
+    font: normal normal normal small Verdana;
+    margin: 0 0 0 0;
+}
+
+.LSGrayXSmallText
+{ 
+ color:#2E5FEF; 
+ font:normal normal normal x-small Verdana; 
+ margin:0 0 0 0; 
+}
+
+.YellowSmallText
+{
+ color:#808000; 
+ font:normal normal normal small Verdana; 
+ margin:0 0 0 0;
+}
+
+.BlueSmallText {
+    color: dodgerblue;
+    font: normal normal normal small Verdana;
+    margin: 0 0 0 0;
+}
+
+.BlueXSmallText
+{	 
+ color:dodgerblue;
+ font:normal normal normal x-small Verdana; 
+ margin:0 0 0 0; 
+}
+
+.YellowXSmallText {
+    color: #808000;
+    font: normal normal normal x-small Verdana;
+    margin: 0 0 0 0;
+}
+.hLinkXXLarge 
+{ 
+ color:#000080;
+ font:normal normal normal xx-large Verdana;   
+ text-decoration:none; 		
+}
+
+.hLinkSmall
+{ 
+ color:#000080;
+ font:normal normal normal small Verdana;   
+ text-decoration:none;   
+}
+
+.hLinkSmallBold
+{ 
+ color:#000080;
+ font:normal normal bold small Verdana;
+ text-decoration:none;   
+}
+
+.hLinkXSmall
+{ 	
+ color:#000080;
+ font:normal normal normal x-small Verdana;   
+ text-decoration:none;  
+}
+
+.hLinkXSmallBold
+{ 	
+ color:#000080;
+ font:normal normal bold x-small Verdana; 
+ text-decoration:none;
+}
+
+.hLinkSmallBlack
+{ 	
+ color:#000000;
+ font:normal normal normal small Verdana;   
+ text-decoration:none;  
+}
+
+.PageCenter
+{
+ text-align:center;  	
+}
+
+.MasterTable
+{ 
+ background-color:#FFFFFF;
+ border:none;  
+ overflow:scroll;
+ table-layout:fixed;    
+ width:90%; 
+}
+
+
+
+.Table {
+    background-color: #FFFFFF;
+    border: none;
+    left: 2%;
+    overflow: scroll;
+    table-layout: fixed;
+    top: 2%;
+    width: 100%;
+}
+
+.TableMtrx
+{     
+ background-color:#FFFFFF;
+ border:solid 1px Gray;  
+ left:2%;
+ overflow:scroll;
+ table-layout:fixed;
+ top:2%;  
+ width:100%;
+}
+
+.TabHeader {
+    background-color: #C0C0C0;
+    color: #FFFFFF;
+    font: normal normal bold medium Verdana;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.TabHeaderCenter
+{
+ background-color:black;
+ color:#FFFFFF;
+ font:normal normal bold large Verdana;  
+ text-align:center; 
+ vertical-align:middle;   
+}
+
+.TabSubHeader
+{
+ background-color:#C0C0C0;
+ color:#FFFFFF;
+ font:normal normal bold medium Verdana;
+ text-align:right; 
+ vertical-align:middle;
+}
+
+
+
+
+
+
+
+
+
+
+
+.FieldHeader
+{
+ background-color:#C0C0C0;
+ font:normal normal bold small Verdana;   	 	
+ text-align:right;    
+ vertical-align:middle; 
+ width:17%;
+}
+
+.FieldContent
+{
+ font:normal normal normal small Verdana;		
+ text-align:left; 
+ vertical-align:middle;   
+}
+
+.FieldHeaderCenter
+{	  
+ background-color:#C0C0C0;	
+ font:normal normal bold small Verdana;	 
+ text-align:center; 
+ vertical-align:middle;  	
+ width:15%;   
+}
+
+.FieldContentCenter
+{ 
+ font:normal normal normal small Verdana;		
+ text-align:center; 
+ vertical-align:middle;
+}
+
+
+
+
+
+
+.CtrlShortValueView
+{	
+ font:normal normal normal small Verdana;		
+ width:55%;    
+}
+
+.CtrlShortValueViewRight
+{	
+ font:normal normal normal small Verdana;		
+ width:55%;  
+ text-align:right;  
+}
+
+.CtrlShortValueViewCenter
+{	
+ font:normal normal normal small Verdana;		
+ width:55%; 
+ text-align:center;  
+}
+
+
+
+
+
+
+
+.CtrlMediumValueView
+{	
+ font:normal normal normal small Verdana;		 
+ width:98%;	 
+}
+
+.CtrlWideValueView
+{	
+ font:normal normal normal small Verdana;			
+ width:99%;	 
+}
+
+
+.CtrlWideValueViewRed
+{	
+ color:Red;  	
+ font:normal normal normal small Verdana;			
+ width:99%;	 
+}
+
+.CtrlShortValueEdit
+{
+ background-color:#E6E6FA; 
+ font:normal normal normal small Verdana;		
+ width:55%;   	
+}
+
+.CtrlMediumValueEdit
+{
+ background-color:#E6E6FA;  	
+ font:normal normal normal small Verdana;		
+ width:98%; 
+}
+
+.CtrlWideValueEdit
+{
+ background-color:#E6E6FA;
+ font:normal normal normal small Verdana;		
+ width:99%;
+}
+
+.btnStyle
+{	  	    
+ background-color:#0075FF;
+ border:solid 1px White;    
+ color:#FFFFFF; 
+ cursor:Hand;
+ font:normal normal normal small Verdana;       
+}
+
+
+/*changed overflow scroll 2 hidden 7/20*/
+.GridViewStyleView
+{	
+ border:solid 1px #C0C0C0;
+ font:normal normal normal small Verdana;
+ overflow:hidden;
+ table-layout:auto; 
+ text-align:center;  
+ vertical-align:middle; 
+ width:100%; 
+}
+
+
+.FieldHeaderNew
+{
+ font:normal normal bold small Verdana;		
+ text-align:right; 
+ vertical-align:middle;   
+}
+
+.treeview_style {
+    <h2>CSS only collapsible TreeView</h2> <div class="treeview hover"> <ul> <li> <input type="checkbox" id="cb-1"> <label for="cb-1"> <span> lorem ipsum</span> </label> <ul> <li><span> dolor sit amet</span></li> <li> <input type="checkbox" id="cb-1-2"> <label for="cb-1-2"> <span> consetetur sadipscing</span> </label> <ul> <li><span> elitr</span></li> <li><span> sed diam nonumy</span></li> </ul> </li> <li><span> eirmod tempor</span></li> <li><span> invidunt ut</span></li> <li><span> labore et dolore</span></li> </ul> </li> <li> <input type="checkbox" id="cb-2"> <label for="cb-2"> <span> magna aliquyam</span> </label> <ul> <li> <span> erat sed</span></li> <li> <span> diam voluptua</span></li> <li> <span> At vero eos</span></li> </ul> </li> </ul> </div>
+}

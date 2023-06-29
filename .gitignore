@@ -1,0 +1,10 @@
+﻿/.vs
+/bin/Debug
+/obj/Debug
+/bin
+/PublishProfiles
+/obj
+/packages
+obj
+/erms-app-prod/{FB536655-1259-4DEC-8137-0550141BBE44}/CodeAnalysisLog.xml
+/erms-app-prod/{FB536655-1259-4DEC-8137-0550141BBE44}/WebProject.lastcodeanalysissucceeded

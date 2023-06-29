@@ -1,0 +1,230 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="DefaultOld.master.cs" Inherits="DefaultOldMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>ERMS</title>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>
+    $("[src*=plus]").live("click", function () {
+        $(this).closest("tr").after("<tr><td colspan = '999'>" + $(this).next().html() + "</td></tr>")
+        $(this).attr("src", "../images/minus.gif");
+    });
+    $("[src*=minus]").live("click", function () {
+        $(this).attr("src", "../images/ig_treeMplus.gif");
+        $(this).closest("tr").next().remove();
+    });
+</script>
+    <style>
+        .subcategory {
+            margin-left: 20px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+</head>
+<body class="nav-fixed">
+    <form id="frmMaster" runat="server">
+        <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
+            <!-- Sidenav Toggle Button-->
+            <button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 me-2 ms-lg-2 me-lg-0" id="sidebarToggle"><i data-feather="menu"></i></button>
+            <!-- Navbar Brand-->
+            <!-- * * Tip * * You can use text or an image for your navbar brand.-->
+            <!-- * * * * * * When using an image, we recommend the SVG format.-->
+            <!-- * * * * * * Dimensions: Maximum height: 32px, maximum width: 240px-->             
+            <a class="navbar-brand pe-3 ps-4 ps-lg-2 me-auto" href="/">ERMS <small>Engineering Resource Management System</small></a>
+             <div class="navbar-nav align-items-center">
+            <asp:HyperLink ID="hlnkQSearch" CssClass="btn btn-link" runat="server">
+                           <b>Quick Search</b></asp:HyperLink>                           
+                 <asp:HyperLink ID="hlnkAdvSearch" CssClass="btn btn-link" runat="server">
+                     <b>Advanced Search</b></asp:HyperLink>
+                 </div>
+            <!-- Navbar Items-->
+            <ul class="navbar-nav align-items-center ms-auto">                                                        
+                <!-- User Dropdown-->
+                <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-4">
+                    <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="/assets/img/illustrations/profiles/profile-1.png" /></a>
+                    <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
+                        <h6 class="dropdown-header d-flex align-items-center">
+                            <img class="dropdown-user-img" src="/assets/img/illustrations/profiles/profile-1.png" />
+                            <div class="dropdown-user-details">
+                                <div class="dropdown-user-details-name"><%= lblUserName.Text %></div>
+                                <div class="dropdown-user-details-email"></div>
+                            </div>
+                        </h6>
+                        <div class="dropdown-divider"></div>
+                      <%--  <a class="dropdown-item" href="#!">
+                            <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
+                            Account
+                        </a>--%>
+                        <a class="dropdown-item" href="/Logout.aspx">
+                            <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
+                            Logout
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav" style="display: block">
+                <nav class="sidenav shadow-right sidenav-light">
+                    <div class="sidenav-menu">
+                        <div class="nav accordion" id="accordionSidenav">
+                            <!-- Sidenav Menu Heading (Account)-->
+                            <!-- * * Note: * * Visible only on and above the sm breakpoint-->
+                            <div class="sidenav-menu-heading d-sm-none">Account</div>                                                     
+                            <!-- Sidenav Accordion (Request)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseRequest" aria-expanded="false" aria-controls="collapseFlows">
+                                <div class="nav-link-icon"><i data-feather="grid"></i></div>
+                                Request
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                         
+                             <!-- Sidenav Accordion (Actions)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseActions" aria-expanded="false" aria-controls="collapseFlows">
+                                <div class="nav-link-icon"><i data-feather="grid"></i></div>
+                                Actions
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseActions" data-bs-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav">
+                                    <a class="nav-link" href="/Actions/ToDo.aspx?SID=<%=SID %>">To Do List</a>                                    
+                                </nav>
+                            </div>
+                             <!-- Sidenav Accordion (BOM)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseBOM" aria-expanded="false" aria-controls="collapseFlows">
+                                <div class="nav-link-icon"><i data-feather="grid"></i></div>
+                                BOM
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseBOM" data-bs-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav">
+                                    <a class="nav-link" href="/BOM/BOMCreate.aspx?SID=<%=SID %>">Create</a>                                    
+                                    <a class="nav-link" href="/BOM/BOMCopy.aspx?SID=<%=SID %>">Copy</a>                                    
+                                    <a class="nav-link" href="/BOM/BOMModify.aspx?SID=<%=SID %>">Modify</a>                                    
+                                    <a class="nav-link" href="/BOM/ERMS_BOMReport.aspx?SID=<%=SID %>">ERMS BOM</a>                                    
+                                </nav>
+                            </div> 
+                            <!-- Sidenav Accordion (Reports)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseReports" aria-expanded="false" aria-controls="collapseFlows">
+                                <div class="nav-link-icon"><i data-feather="grid"></i></div>
+                                Reports
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseReports" data-bs-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav">
+                                    <a class="nav-link" href="/Common/AppLaunch.aspx?SID=<%=SID %>">Standard Reports</a>                                    
+                                    <a class="nav-link" href="/Common/AppLaunch.aspx?SID=<%=SID %>">Exec. DashBoard</a>                                                                        
+                                </nav>
+                            </div>
+                            <% if (Utils.IsAdmin(SID) == true || 1 == 1)
+                                { %>
+                             <!-- Sidenav Accordion (Admin)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseAdmin" aria-expanded="false" aria-controls="collapseAdmin">
+                                <div class="nav-link-icon"><i data-feather="grid"></i></div>
+                                Admin
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseAdmin" data-bs-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavAdminMenu">
+                                    <!-- Nested Sidenav Accordion (Admin -> Account)-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#AdminCollapseWorkFlow" aria-expanded="false" aria-controls="AdminCollapseWorkFlow">
+                                        Account
+                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="AdminCollapseWorkFlow" data-bs-parent="#accordionSidenavAdminMenu">
+                                        <nav class="sidenav-menu-nested nav">
+                                            <a class="nav-link" href="/WorkFlowManagement/WFRoutingGroup.aspx?SID=<%=SID %>">Groups</a>
+                                            <a class="nav-link" href="/WorkFlowManagement/WFAction.aspx?SID=<%=SID %>">Actions</a>                                            
+                                            <a class="nav-link" href="/WorkFlowManagement/WFTemplate.aspx?SID=<%=SID %>">Templates</a>                                            
+                                        </nav>
+                                    </div>                                    
+                                   <a class="nav-link" href="/Common/AppLaunch.aspx?SID=<%=SID %>">Configuration</a>                                                                                                            
+                                </nav>
+                            </div>
+                             <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseSetting" aria-expanded="false" aria-controls="collapseFlows">
+                                <div class="nav-link-icon"><i data-feather="grid"></i></div>
+                                Setting
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseSetting" data-bs-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav">
+                                    <a class="nav-link" href="/RoleSetting/RoleModule.aspx?SID=<%=SID %>">Role Module</a>
+                                                                       
+                                </nav>
+
+                           
+                            <% } %>
+                             </div>
+                            <%-- test --%>
+
+                        </div>
+                    </div>
+                    <!-- Sidenav Footer-->
+                    <div class="sidenav-footer">
+                        <div class="sidenav-footer-content">
+                            <div class="sidenav-footer-subtitle">Logged in as:</div>
+                            <div class="sidenav-footer-title"><asp:Label ID="lblUserName" CssClass="hLinkXSmall" runat="Server">
+                    </asp:Label>   </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <asp:ContentPlaceHolder ID="PageContent" runat="server">
+                </asp:ContentPlaceHolder>
+                <footer class="footer-admin mt-auto footer-light">
+                    <div class="container-xl px-4">
+                        <div class="row">
+                             <div class="col-md-6 small"><asp:HyperLink  ID="hlnkContact" CssClass="hLinkXSmallBold" runat="server">
+                         Contact Information</asp:HyperLink>&nbsp;&nbsp;&nbsp;
+                         <asp:HyperLink  ID="hlnkSupport" CssClass="hLinkXSmallBold" runat="server">
+                         Support Links</asp:HyperLink>&nbsp;&nbsp;&nbsp;
+                         <asp:HyperLink  ID="hlnkHelp" CssClass="hLinkXSmallBold" runat="server">
+                         Help Information</asp:HyperLink></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 small">ERMS &copy; Web Engineering Resource Management System  Version 6.0</div>
+                            <div class="col-md-6 text-md-end small">
+                                <a href="#!">Copyright</a>                                
+                                <a href="#!"> ©2000-2020, PLM Technologies &amp; All Rights Reserved</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>       
+    </form>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/scripts.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("input[id*='ucbtnDate']").hide();
+            $("input[id*='uctxtDate']").datepicker({
+                format: 'dd/mm/yyyy'
+            });
+            var str = location.href.toLowerCase();
+
+            $('a.nav-link').each(function () {
+
+                if (str.indexOf($(this).attr("href").toLowerCase()) > -1) {
+                    $(this).addClass('active')
+                    $(this).parent().parent().addClass('show');
+                    $(this).parent().parent().parent().parent().addClass('show');
+                    $(this).parent().parent().prev('a').removeClass('collapsed');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

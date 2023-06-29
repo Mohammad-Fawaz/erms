@@ -1,0 +1,211 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Default.master.cs" Inherits="DefaultMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
+<head runat="server">
+    <title>ERMS</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $("[src*=plus]").live("click", function () {
+            $(this).closest("tr").after("<tr><td colspan = '999'>" + $(this).next().html() + "</td></tr>")
+            $(this).attr("src", "../images/minus.gif");
+        });
+        $("[src*=minus]").live("click", function () {
+            $(this).attr("src", "../images/ig_treeMplus.gif");
+            $(this).closest("tr").next().remove();
+        });
+    </script>
+    <style>
+        .subcategory {
+            margin-left: 20px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .datepicker {
+            padding: 0.875rem 1.125rem !important;
+        }
+
+        .red {
+            color: red;
+        }
+    </style>
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+</head>
+<asp:ContentPlaceHolder ID="head" runat="server">
+</asp:ContentPlaceHolder>
+<body class="nav-fixed">
+    <form id="frmMaster" runat="server">
+        <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
+            <!-- Sidenav Toggle Button-->
+            
+                <button class="btn btn-icon btn-transparent-dark me-2 ms-lg-2 me-lg-0" id="sidebarToggle"><i data-feather="menu"></i></button>
+            
+            
+                <a id="lnkLogo" runat="server" class="navbar-brand pe-3 ps-4 ps-lg-2 me-auto" style="flex-wrap: wrap !important;" onclick="">ERMS <small>Engineering Resource Management System</small></a>
+            
+            <!--removed property order-1 order-lg-0>
+            <!-- Navbar Brand-->
+            <!-- * * Tip * * You can use text or an image for your navbar brand.-->
+            <!-- * * * * * * When using an image, we recommend the SVG format.-->
+            <!-- * * * * * * Dimensions: Maximum height: 32px, maximum width: 240px-->
+            
+            
+                <div class="navbar-nav align-items-center">
+                <asp:HyperLink ID="hlnkQSearch" CssClass="btn btn-link" runat="server">
+                           <b>Quick Search</b></asp:HyperLink>
+                <asp:HyperLink ID="hlnkAdvSearch" CssClass="btn btn-link" runat="server">
+                     <b>Advanced Search</b></asp:HyperLink>
+            </div>
+            
+            <!-- Navbar Items-->
+                <ul class="navbar-nav align-items-center ms-auto">
+                <!-- User Dropdown-->
+                <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-4">
+                    <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img class="img-fluid" src="/assets/img/illustrations/profiles/profile-1.png" /></a>
+                    <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
+                        <h6 class="dropdown-header d-flex align-items-center">
+                            <img class="dropdown-user-img" src="/assets/img/illustrations/profiles/profile-1.png" />
+                            <div class="dropdown-user-details">
+                                <div class="dropdown-user-details-name"><%= lblUserName.Text %></div>
+                                <div class="dropdown-user-details-email"></div>
+                            </div>
+                        </h6>
+                        <div class="dropdown-divider"></div>
+                        <%--  <a class="dropdown-item" href="#!">
+                            <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
+                            Account
+                        </a>--%>
+                        <a class="dropdown-item" href="/Logout.aspx">
+                            <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
+                            Logout
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav" style="display: block">
+                <nav class="sidenav shadow-right sidenav-light">
+                    <div class="sidenav-menu">
+                        <div class="nav accordion" id="accordionSidenav">
+                            <!-- Sidenav Menu Heading (Account)-->
+                            <!-- * * Note: * * Visible only on and above the sm breakpoint-->
+                            <div class="sidenav-menu-heading d-sm-none">Account</div>
+                            <!-- Sidenav Accordion (Request)-->
+
+                            <asp:Repeater ID="rptMain" runat="server" OnItemDataBound="rptMain_ItemDataBound">
+                                <ItemTemplate>
+                                    <asp:HyperLink CssClass="nav-link" runat="server" ID="hlkMainLink">
+                             <div class="nav-link-icon"><i data-feather="grid"></i></div>
+                                <%# Eval("Title") %>
+                                    </asp:HyperLink>
+                                    <%--<a class="nav-link collapsed" href='<%# Eval("Url") %>'>
+                               
+                               <%-- <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>--%>
+                                    <%--</a>--%>
+                                    <%--<asp:Literal ID="ltrlMainMenu" runat="server"></asp:Literal>
+                        <asp:HiddenField Id="HfTitle" runat="server" Value='<%# Eval("Title") %>'/>
+                        <asp:HiddenField Id="HfUrl" runat="server" Value='<%# Eval("Url") %>'/>--%>
+                                </ItemTemplate>
+                            </asp:Repeater>
+
+
+                            <asp:Repeater ID="rptCategories" runat="server" OnItemDataBound="rptMenu_OnItemBound">
+                                <ItemTemplate>
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target='#collapse<%#Eval("Title") %>' aria-expanded="false" aria-controls="collapseFlows">
+                                        <div class="nav-link-icon"><i data-feather="grid"></i></div>
+                                        <%# Eval("Title") %>
+                                        <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <asp:Literal ID="ltrlSubMenu" runat="server"></asp:Literal>
+                                </ItemTemplate>
+                            </asp:Repeater>
+
+
+
+                        </div>
+                    </div>
+
+                    <!-- My test Nav Menu -- >
+                    <!-- Sidenav Footer-->
+                    <div class="sidenav-footer">
+                        <div class="sidenav-footer-content">
+                            <div class="sidenav-footer-subtitle">Logged in as:</div>
+                            <div class="sidenav-footer-title">
+                                <asp:Label ID="lblUserName" CssClass="hLinkXSmall" runat="Server">
+                                </asp:Label>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <asp:ContentPlaceHolder ID="PageContent" runat="server">
+                </asp:ContentPlaceHolder>
+                <footer class="footer-admin mt-auto footer-light">
+                    <div class="container-xl px-4">
+                        <div class="row">
+                            <div class="col-md-6 small">
+                                <asp:HyperLink ID="hlnkContact" CssClass="hLinkXSmallBold" runat="server">
+                         Contact Information</asp:HyperLink>&nbsp;&nbsp;&nbsp;
+                         <%--<asp:HyperLink  ID="hlnkSupport" CssClass="hLinkXSmallBold" runat="server">
+                         Support Links</asp:HyperLink>&nbsp;&nbsp;&nbsp;--%>
+                                <asp:HyperLink ID="hlnkHelp" CssClass="hLinkXSmallBold" runat="server">
+                         Help Information</asp:HyperLink>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 small">ERMS &copy; Engineering Resource Management System  Version 20.2</div>
+                            <div class="col-md-6 text-md-end small">
+                                <a href="#!">Copyright</a>
+                                <a href="#!">Copyright ©2000-2022, Sky5 Solutions & All Rights Reserved</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/scripts.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            $("input[id*='ucbtnDate']").hide();
+            $("input[id*='uctxtDate']").datepicker({
+                format: 'mm/dd/yyyy'
+            });
+            $('.datepicker').datepicker({
+                format: 'mm/dd/yyyy'
+            });
+
+            var str = window.location.href.toLowerCase();
+            var pageName = window.location.pathname.split("/").pop().toString();
+           
+            if (pageName.toLowerCase() == "AddParts.aspx".toLowerCase()) {
+                str = str.replace('addparts.aspx', 'docinformation.aspx');
+            }
+            $('a.nav-link').each(function () {
+                var href = $(this).attr("href").toLowerCase();
+                if (str.indexOf(href) > -1) {
+                    $(this).addClass('active')
+                    $(this).parent().parent().addClass('show');
+                    $(this).parent().parent().parent().parent().addClass('show');
+                    $(this).parent().parent().prev('a').removeClass('collapsed');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

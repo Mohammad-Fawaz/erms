@@ -1,0 +1,42 @@
+﻿.treeview_style{
+
+
+<h2>CSS only collapsible TreeView</h2>
+<div class="treeview hover">
+<ul>
+<li>
+<input type="checkbox" id="cb-1">
+<label for="cb-1">
+<span> lorem ipsum</span>
+</label>
+<ul>
+<li><span> dolor sit amet</span></li>
+<li>
+<input type="checkbox" id="cb-1-2">
+<label for="cb-1-2">
+<span> consetetur sadipscing</span>
+</label>
+<ul>
+<li><span> elitr</span></li>
+<li><span> sed diam nonumy</span></li>
+</ul>
+</li>
+<li><span> eirmod tempor</span></li>
+<li><span> invidunt ut</span></li>
+<li><span> labore et dolore</span></li>
+</ul>
+</li>
+<li>
+<input type="checkbox" id="cb-2">
+<label for="cb-2">
+<span> magna aliquyam</span>
+</label>
+<ul>
+<li> <span> erat sed</span></li>
+<li> <span> diam voluptua</span></li>
+<li> <span> At vero eos</span></li>
+</ul>
+</li>
+</ul>
+</div>
+    }

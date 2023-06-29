@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "erms-app-dev", ".", "{FB536655-1259-4DEC-8137-0550141BBE44}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/ERMS"
+		Debug.AspNetCompiler.PhysicalPath = "..\erms-app-dev\"
+		Debug.AspNetCompiler.TargetPath = "Development Code\ERMS\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/ERMS"
+		Release.AspNetCompiler.PhysicalPath = "..\erms-app-dev\"
+		Release.AspNetCompiler.TargetPath = "Development Code\ERMS\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "3696"
+		VWDVirtualPath = "/ERMS"
+		SlnRelativePath = "..\erms-app-dev\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB536655-1259-4DEC-8137-0550141BBE44}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{FB536655-1259-4DEC-8137-0550141BBE44}.Debug|.NET.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ECBA48C4-67A1-4F0D-A873-1A9F31A71387}
+	EndGlobalSection
+EndGlobal

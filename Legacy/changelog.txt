@@ -1,0 +1,25 @@
+New Tables:
+	ElementQtyCalc
+	PartPar
+
+New Views:
+	ViewElement / QElements
+	ViewTraveler
+	ViewDocsPartPar
+	ViewParts - Added Documents for DocType
+
+New Files:
+	ermsweb/actions/view_element_wafer.asp
+	ermsweb/actions/script/incl_elements.asp
+	ermsweb/actions/mod_wafer.asp
+	ermsweb/actions/mod_element.asp
+	ermsweb/actions/pnt_traveler.asp
+	ermsweb/actions/ret_doc_info.asp
+
+Modified Files:
+	ermsweb/script/include_lists.asp - Added DocElement Type for GetListing(), DocElement under GetSelect(), DocIngot under GetSelect() fixed GetSelect() to use OptVal and vVal
+	ermsweb/script/include_html.asp - Modified Doc Type for GetSelItemInfo(), added DocElement
+	ermsweb/actions/ret_search.asp - Added DocElement type
+
+
+
